@@ -12,4 +12,15 @@ pipeline {
 		 }
 	    }
 	}
+	post{
+		success{
+			echo "sucess build"
+		}
+		failure{
+			echo "build falied"
+		}
+		always{
+			echo "always run Abdur"
+		}
+	}
 }
