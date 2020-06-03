@@ -5,13 +5,15 @@ pipeline {
 	stages {
 	   stage('Maven Install') {
           agent {         
-             docker {          
-                image 'maven:3.6.3'         
+             docker {  
+				echo "maven strated  build..."        
+                image 'maven:3.6.3'
+				         
              }       
             }       
           steps {
-             sh 'mvn clean install'
-             echo "maven build..."
+            //sh 'mvn clean install'
+             echo "maven end build..."
 			}
         }
 	   stage('Build') {
