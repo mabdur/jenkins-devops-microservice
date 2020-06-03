@@ -2,26 +2,22 @@
 pipeline {
 	agent {
     docker {
-        image 'maven:3-alpine'
+        image 'maven:3.6.3'
         
     }
     }
-    // agent {
-    //     docker {
-    //         image 'maven:3-alpine'
-    //         args '-v $HOME/.m2:/root/.m2'
-    //     }
-    // }
+   
     stages {
-    //     stage('Build') {
-    //         steps {
-    //             sh 'mvn -B'
-    //         }
-    //     }
+        stage('Build') {
+            steps {
+                sh 'mvn --version'
+				echo "Build"
+            }
+        }
     
-	    stage('Buil') {
+	    stage('Test') {
 		 steps{
-		   echo "build"
+		   echo "Test"
 		 }
 	    }
 	}
