@@ -1,14 +1,12 @@
 pipeline {
 	//agent docker{ image 'maven:3.6.3' }
 	//agent { docker { image 'maven:3.6.3'}}
-	agent docker {  
-				        
-                image 'maven:3.6.3'
-				         
-             }  
+	agent any
 	stages {
 	   stage('Maven Install') {
-              
+          agent {         
+                  
+            }       
           steps {
             //sh 'mvn clean install'
              echo "maven end build..."
