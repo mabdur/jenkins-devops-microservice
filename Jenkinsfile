@@ -6,7 +6,7 @@ pipeline {
 	   stage('Maven Install') {
           agent {         
              docker {  
-				echo "maven strated  build..."        
+				        
                 image 'maven:3.6.3'
 				         
              }       
